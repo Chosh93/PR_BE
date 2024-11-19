@@ -1,5 +1,6 @@
-package com.study.PR.entity;
+package com.study.PR.frontend.account.entity;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;

@@ -1,6 +1,6 @@
-package com.study.PR.repository;
+package com.study.PR.frontend.account.repository;
 
-import com.study.PR.entity.Account;
+import com.study.PR.frontend.account.entity.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
