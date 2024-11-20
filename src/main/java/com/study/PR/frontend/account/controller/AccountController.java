@@ -1,7 +1,9 @@
 package com.study.PR.frontend.account.controller;
 
 import com.study.PR.frontend.account.dto.request.LoginRequest;
+import com.study.PR.frontend.account.dto.request.SignUpRequest;
 import com.study.PR.frontend.account.dto.response.LoginResponse;
+import com.study.PR.frontend.account.dto.response.SignUpResponse;
 import com.study.PR.frontend.account.service.AccountService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -21,14 +23,23 @@ public class AccountController {
 
     //로그인
     @PostMapping("login")
-    @Operation(summary = "로그인", description = "",
-            responses = {
-                    @ApiResponse(responseCode = "200", description = "로그신 성공"),
-                    @ApiResponse(responseCode = "401", description = "로그인 실패")
-            })
+    @Operation(summary = "로그인",
+        responses = {
+                @ApiResponse(responseCode = "200", description = "로그신 성공"),
+                @ApiResponse(responseCode = "401", description = "로그인 실패")
+        })
     public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest loginRequest){
-        System.out.println(accountService.login(loginRequest));
         return accountService.login(loginRequest);
     }
 
+    //회원가입
+    @PostMapping("signUp")
+    @Operation(summary = "회원가입",
+        responses = {
+            @ApiResponse(responseCode = "200", description = "회원가입 성공"),
+            @ApiResponse(responseCode = "401", description = "회원가입 실패")
+        })
+    public ResponseEntity<SignUpResponse> signUp(@RequestBody SignUpRequest signUpRequest){
+        return accountService.signUp(signUpRequest);
+    }
 }
