@@ -10,6 +10,7 @@ import lombok.Getter;
 @Getter
 @Builder
 @AllArgsConstructor
+@Schema(description = "회원가입 응답 객체")
 public class SignUpResponse {
     @Schema(description = "회원가입 성공 여부", example = "true")
     private boolean success;

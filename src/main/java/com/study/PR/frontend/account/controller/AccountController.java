@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @CrossOrigin(origins = "http://localhost:7700")
 @RequestMapping("/api/account")
-@Tag(name = "회원", description = "")
+@Tag(name = "회원")
 
 public class AccountController {
     @Autowired
@@ -25,8 +25,7 @@ public class AccountController {
     @PostMapping("login")
     @Operation(summary = "로그인",
         responses = {
-                @ApiResponse(responseCode = "200", description = "로그신 성공"),
-                @ApiResponse(responseCode = "401", description = "로그인 실패")
+                @ApiResponse(responseCode = "200", description = "로그신 성공")
         })
     public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest loginRequest){
         return accountService.login(loginRequest);
@@ -36,8 +35,7 @@ public class AccountController {
     @PostMapping("signUp")
     @Operation(summary = "회원가입",
         responses = {
-            @ApiResponse(responseCode = "200", description = "회원가입 성공"),
-            @ApiResponse(responseCode = "401", description = "회원가입 실패")
+            @ApiResponse(responseCode = "200", description = "회원가입 성공")
         })
     public ResponseEntity<SignUpResponse> signUp(@RequestBody SignUpRequest signUpRequest){
         return accountService.signUp(signUpRequest);

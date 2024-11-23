@@ -6,6 +6,7 @@ import lombok.Data;
 
 @Data
 @Builder
+@Schema(description = "로그인 응답 객체")
 public class LoginResponse {
     @Schema( description = "로그인 성공 여부", example = "true")
     private boolean success;
